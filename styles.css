@@ -1,0 +1,124 @@
+html {
+  background-color: #F5F6F3;
+}
+
+body {
+  margin: 0;
+}
+
+.grid { 
+  display: grid;
+  grid-template-columns: 28% 52%;
+  grid-template-areas:
+    "left header"
+    "left body";
+  height: 100vh;
+}
+
+.aboutText {
+  font-family: Futura;
+  font-style: italic;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  
+  padding-bottom: 60px;
+  padding-left: 40px;
+}
+
+/*
+.left, .body {
+  grid-row-start: span 2;
+}
+*/
+
+.about {
+  grid-area: left;
+  text-align: right;  
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  width: 10px;
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background-image: url("bgdot.png");
+  background-size: 1px 32px;
+  background-repeat: repeat-y;
+}
+
+.header {
+  grid-area: header;
+  margin-top: 50px;
+  margin-left: 20%;
+  max-width: 43%;
+  font-family: Futura;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+.body {
+  grid-area: body;
+}
+
+.statsGrid {
+  display: grid;
+  grid-column-gap: 1.8rem;
+  grid-template-columns: 55% 45%;
+  grid-template-areas:
+    "skills tools"
+    "bonus .";
+  margin-left: 20%;
+  margin-top: 145px;
+  font-family: Futura;
+  line-height: 1.7em;
+  background-image: url("rectangle 60.png"), url("rectangle 61.png");
+  background-blend-mode: screen;
+  background-position: center .9em, center .09em;
+  background-repeat: no-repeat;
+  
+}
+
+h1 {
+  font-style: Italic;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-bottom: .75rem;
+}
+.skills {
+  grid-area: skills;
+  margin-bottom: 1.7rem;
+}
+
+.tools {
+  grid-area: tools;
+}
+
+.bonus {
+  grid-area: bonus;
+}
+
+.stats {
+  display: grid;
+  grid-column-gap: 2em;
+  grid-template-columns: 40% 60%;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
