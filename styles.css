@@ -312,7 +312,7 @@ body {
   margin-top: 145px;
   font-family: Futura;
   line-height: 1.7em;
-  background-image: url("rectangle 60.png"), url("rectangle 61.png");
+  background-image: url("Rectangle 60.png"), url("Rectangle 61.png");
   background-blend-mode: screen;
   background-position: center .9em, center .09em;
   background-repeat: no-repeat;
