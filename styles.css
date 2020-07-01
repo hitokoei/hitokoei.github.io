@@ -1,5 +1,11 @@
 html {
   background-color: #F5F6F3;
+  scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 body {
@@ -97,13 +103,13 @@ div .animate.up {
 
 /* Navigation */
 .nav {
-  display: fixed;
   font-family: Futura;
-  font-weight: 100;
-  font-size: 16px;
-  position: absolute;
+  /*font-weight: 100;
+  font-size: 16px; */
+  position: fixed;
   bottom: 10%;
   right: 5%;
+  z-index: 9;
 }
 
 ul {
@@ -189,25 +195,30 @@ div .animate.down {
   transition: transform 250ms, easeOutCubic 250ms, opacity 250ms;
 }
 
-.name {
-  display: grid;
-  position: absolute;
-  top: 3%;
-  left: 20%;
-  }
 
-.green{
+/* Landing */
+.name {
+  position: relative;
+  top: 3%;
+  text-align: right;
+}
+
+.green {
   font-family: Futura-Medium;
   font-style: normal;
   font-size: 180px;
   font-weight: 500;
   color: #0FF0FF;
-  position: absolute;
+  position: relative;
   left: -2px;
   top: 0px;
   z-index: 0;
+  display: inline-block;
 }
-.red{
+
+/* red */
+.green:before {
+  content: "CODY QUEST";
   font-family: Futura-Medium;
   font-style: italic;
   font-size: 180px;
@@ -220,7 +231,9 @@ div .animate.down {
   mix-blend-mode: multiply;
 }
 
-.blue{
+/* blue */
+.green:after{
+  content: "CODY QUEST";
   font-family: Futura-Medium;
   font-style: normal;
   font-size: 180px;
@@ -233,6 +246,8 @@ div .animate.down {
   mix-blend-mode: multiply;
 }
 
+
+/* About Me */
 body {
   margin: 0;
 }
@@ -243,7 +258,7 @@ body {
   grid-template-areas:
     "left header"
     "left body";
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .aboutText {
@@ -316,7 +331,7 @@ body {
   background-blend-mode: screen;
   background-position: center .9em, center .09em;
   background-repeat: no-repeat;
-  
+  background-size: contain;
 }
 
 h1 {
@@ -354,3 +369,69 @@ h1 {
   display: inline-block;
   margin-right: 5px;
 }
+
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .name {
+    top: 20%;
+  }
+
+  .green, .green:before, .green:after {
+    font-size: 90px;
+  }
+
+  body {
+    background-position-x: 10%;
+  }
+
+ .UX {
+  left: 11.5%;
+  }
+
+  ul {
+    bottom: 0%;
+    font-size: 12px;
+  }
+
+  li {
+    height: 35px;
+  }
+
+  li:hover {
+    font-size: 14px;
+  }
+
+  .aboutText {
+    padding-left: 145px;
+  } 
+
+.header {
+  max-width: 70%;
+  margin-left: -14%;
+  font-size: 14px;
+
+  }
+
+  .body {
+    grid-area: body;
+    min-width: 700px;
+  }
+
+  .statsGrid {
+    display: grid;
+    grid-template-areas:
+      "skills"
+      "tools"
+      "bonus";
+    margin-left: -7%;
+    background-position: top 8em left .1em, top 8.5em left .01em;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  .bonus {
+    margin-top: 35px;
+  }
+}
+
